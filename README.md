@@ -1,28 +1,228 @@
-# VoiceLink
 
-App Android in Kotlin/Jetpack Compose che trasforma il telefono in un microfono con monitoraggio sugli altoparlanti, effetti vocali e correzione di intonazione sperimentale.
+# 🎤 VoiceForge
 
-## Apertura
+<p align="center">
+  <img src="docs/images/banner.png" alt="VoiceForge Banner" width="100%">
+</p>
 
-1. Apri questa cartella con **Android Studio** (JDK 17).
-2. Lascia completare la sincronizzazione Gradle e installa su un telefono fisico con Android 8 o successivo.
-3. Concedi il permesso **Microfono**, poi premi `Inizia a parlare`.
+<p align="center">
+  <strong>Turn your Android device into a powerful real-time wireless microphone.</strong>
+</p>
 
-## Funzioni incluse
+<p align="center">
+  <img src="https://img.shields.io/badge/platform-Android-3DDC84?logo=android&logoColor=white" alt="Android">
+  <img src="https://img.shields.io/badge/language-Kotlin-7F52FF?logo=kotlin&logoColor=white" alt="Kotlin">
+  <img src="https://img.shields.io/badge/UI-Jetpack%20Compose-4285F4" alt="Compose">
+  <img src="https://img.shields.io/badge/Material-Material%203-1976D2" alt="Material 3">
+  <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT">
+  <img src="https://img.shields.io/badge/status-In%20Development-orange" alt="Development">
+</p>
 
-- Catena microfono → altoparlante a bassa latenza (48 kHz quando supportato), con instradamento preferenziale a cuffie/casse Bluetooth.
-- Volume casse, guadagno microfono, indicatore di livello e latenza stimata.
-- Quattro profili rapidi: Pulito, Podcast, Palco e Pop.
-- Gate anti-rumore, cancellazione eco, riduzione rumore, AGC e limiter tramite gli effetti disponibili sul dispositivo.
-- Autotune in tempo reale con tonalità, scala, intensità e velocità di correzione.
-- Mixer voce a tre bande (bassi, medi, alti), riverbero e delay.
-- Streaming Wi-Fi locale in UDP PCM-16 mono, 48 kHz: inserisci IP del ricevitore e porta (predefinita 5004), oppure usa il broadcast `255.255.255.255` se la rete lo consente.
-- Tema Sistema, Chiaro e Scuro; i temi Sistema usano Material You su Android 12+.
-- Console professionale a quattro aree: Live, Mixer, Voice Studio e Routing, con meter d'ingresso e scene rapide.
-- Interfaccia Jetpack Compose Material 3: su Android 12+ usa automaticamente i colori Material You del telefono.
+---
 
-## Nota importante su sicurezza e resa
+## 🚀 About
 
-Il monitoraggio da microfono ad altoparlante può innescare feedback. Inizia sempre a volume basso, tieni il microfono lontano dalle casse e usa cuffie per risultati migliori. La cancellazione eco e l'autotune dipendono dal supporto audio del dispositivo: l'app li abilita quando Android li rende disponibili, ma non tutti i telefoni hanno la stessa qualità o la stessa latenza.
+**VoiceForge** is an open-source Android application designed to transform your smartphone into a professional live microphone and voice processing studio.
 
-L'autotune qui è un processore leggero, pensato per monitoraggio in tempo reale; una correzione vocale da studio richiederebbe un motore DSP più pesante e introdurrebbe più latenza.
+Unlike traditional microphone apps, VoiceForge aims to provide a modular real-time audio engine capable of:
+
+* 🎤 Low-latency live microphone monitoring
+* 🔊 Real-time audio amplification
+* 🎛 Professional audio processing
+* 🎵 Voice effects
+* 🎼 AutoTune (planned)
+* 📡 Wireless audio streaming
+* 🎧 Bluetooth audio support
+* 🎚 Advanced mixer
+* 💾 Presets & profiles
+* 🎨 Beautiful Material You interface
+
+The long-term goal is to become one of the most advanced open-source audio applications available for Android.
+
+---
+
+# ✨ Planned Features
+
+## 🎤 Live Microphone
+
+* Real-time microphone monitoring
+* Ultra-low latency
+* Gain control
+* Mute
+* Output routing
+* Volume boost
+
+## 🎚 Audio Processing
+
+* Noise Gate
+* Compressor
+* Limiter
+* Equalizer
+* Noise Reduction
+* Echo Cancellation
+* Feedback Reduction
+
+## 🎵 Voice Effects
+
+* Reverb
+* Delay
+* Chorus
+* Flanger
+* Phaser
+* Robot Voice
+* Megaphone
+* Radio
+* Alien
+* Demon
+* Helium
+* Deep Voice
+
+## 🎼 AutoTune (Roadmap)
+
+* Real-time pitch correction
+* Major/Minor scales
+* Key selection
+* Humanize
+* Vibrato
+* Formant correction
+* Adjustable correction speed
+
+## 📡 Connectivity
+
+* Phone speaker
+* Wired headphones
+* Bluetooth audio
+* USB audio devices
+* Wi-Fi audio streaming *(planned)*
+
+---
+
+# 🏗 Architecture
+
+VoiceForge follows a modern Android architecture.
+
+* Kotlin
+* Jetpack Compose
+* Material 3
+* MVVM
+* Clean Architecture
+* Dependency Injection (Hilt)
+* Navigation Compose
+* DataStore
+* Room
+* Coroutines
+* Flow
+
+Future versions will integrate a native DSP engine using **C++** and **Oboe** for professional-grade real-time audio performance.
+
+---
+
+# 📂 Project Structure
+
+```text
+VoiceForge
+│
+├── app/
+├── core/
+│   ├── audio/
+│   ├── dsp/
+│   ├── autotune/
+│   ├── bluetooth/
+│   ├── network/
+│   └── common/
+│
+├── feature/
+│   ├── home/
+│   ├── live/
+│   ├── mixer/
+│   ├── effects/
+│   └── settings/
+│
+├── designsystem/
+├── docs/
+└── .github/
+```
+
+---
+
+# 🎨 Design
+
+VoiceForge is built entirely with **Material You (Material 3)**.
+
+Design goals:
+
+* Clean
+* Fast
+* Accessible
+* Animated
+* Beginner friendly
+* Professional
+
+---
+
+# 📈 Roadmap
+
+## Version 0.1
+
+* Project setup
+* Material You UI
+* Navigation
+* Home screen
+* Audio engine foundation
+
+## Version 0.2
+
+* Live microphone
+* Audio routing
+* Volume controls
+
+## Version 0.3
+
+* Equalizer
+* Compressor
+* Noise Gate
+
+## Version 0.4
+
+* Voice Effects
+
+## Version 0.5
+
+* AutoTune Engine
+
+## Version 1.0
+
+* Stable release
+* Wireless streaming
+* Plugin system
+* Complete documentation
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome.
+
+Ideas, bug reports, pull requests and feature suggestions are encouraged.
+
+If you'd like to help improve VoiceForge, feel free to open an Issue or submit a Pull Request.
+
+---
+
+# 📜 License
+
+This project will be released under the **MIT License**.
+
+---
+
+# ⭐ Support the Project
+
+If you enjoy VoiceForge, consider giving the repository a ⭐.
+
+It helps the project grow and reach more developers.
+
+---
+
+<p align="center">
+Made with ❤️ using Kotlin, Jetpack Compose and open-source technologies.
+</p>
